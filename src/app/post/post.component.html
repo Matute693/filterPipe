@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Listado dias</h1>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <input type="text" class="form-control" name="filterDays" placeholder="Buscar..." [(ngModel)]="filterDays">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+                <table class="table table-striped">
+                    <thead> 
+                        <tr>
+                            <th>Id</th>
+                            <th>Dia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let post of week | filter:filterDays">
+                            <td>{{post.id}}</td>
+                            <td>{{post.title}}</td>
+                    </tbody>
+                </table>
+        </div>
+    </div>
+</div>
